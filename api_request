@@ -1,0 +1,5 @@
+Команда:
+
+```
+curl -o output.xml "https://dictionary.yandex.net/api/v1/dicservice/lookup?key=dict.1.1.20240605T090234Z.8bc27eae1ddeb8b5.4f4a9983d5b75fec0c305d9b46c189570e4e06d4&lang=en-ru&text=sky"
+```
