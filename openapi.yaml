@@ -1,0 +1,35 @@
+openapi: 3.0.0
+info:
+  title: My test API
+  version: 1.0.0
+  description: A test API for practicing OpenAPI tools.
+servers:
+  - url: https://api.example.com
+paths:
+  /whoami:
+    get:
+      summary: Login check
+      responses:
+        '200':
+          description: Get the user name for the auth token in the request.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      scheme: bearer
+      type: http
+      description: |
+        Use `Authorization: Bearer <token>` header for the request authorization.
