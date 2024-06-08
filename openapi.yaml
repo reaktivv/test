@@ -39,7 +39,7 @@ paths:
 components:
   schemas:
     translation:
-      $ref: '#./schemas/translation.yml'
+      $ref: './schemas/translation.yml'
   securitySchemes:
     key:
       type: apiKey
