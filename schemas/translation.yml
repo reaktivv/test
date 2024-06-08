@@ -1,0 +1,58 @@
+type: object
+properties:
+  head:
+    type: object
+  def:
+    type: array
+    items:
+      type: object
+      properties:
+        text:
+          type: string
+        pos:
+          type: string
+        ts:
+          type: string
+        tr:
+          type: array
+          items:
+            type: object
+            properties:
+              text:
+                type: string
+              pos:
+                type: string
+              gen:
+                type: string
+              syn:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+                    pos:
+                      type: string
+                    gen:
+                      type: string
+              mean:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+              ex:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+                    tr:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          text:
+                            type: string

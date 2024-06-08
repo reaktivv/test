@@ -1,35 +1,48 @@
 openapi: 3.0.0
 info:
-  title: My test API
+  title: OpenAPI test
   version: 1.0.0
-  description: A test API for practicing OpenAPI tools.
+  description: |
+    A test OpenAPI specification for practicing OpenAPI tools.
+    Based on [Yandex Dictionary API](http://api.yandex.ru/dictionary).
 servers:
-  - url: https://api.example.com
+  - url: https://dictionary.yandex.net/api/v1/dicservice.json
 paths:
-  /whoami:
+  /lookup:
     get:
-      summary: Login check
+      summary: Look up translations
+      description: Get all available translations of a word or phrase.
+      parameters:
+        - name: lang
+          in: query
+          required: true
+          schema:
+            type: string
+            example: en-ru
+          description: The language pair.
+        - name: text
+          in: query
+          required: true
+          schema:
+            type: string
+            example: time
+          description: The text to translate.
       responses:
         '200':
-          description: Get the user name for the auth token in the request.
+          description: Translated word or phrase with usage examples and meaning explanation.
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/User'
+                  $ref: '#/components/schemas/translation'
 components:
   schemas:
-    User:
-      type: object
-      properties:
-        id:
-          type: integer
-        name:
-          type: string
+    translation:
+      $ref: '#./schemas/translation.yml'
   securitySchemes:
-    bearerAuth:
-      scheme: bearer
-      type: http
-      description: |
-        Use `Authorization: Bearer <token>` header for the request authorization.
+    key:
+      type: apiKey
+      description: API key to authorize requests.
+      name: key
+      in: query
