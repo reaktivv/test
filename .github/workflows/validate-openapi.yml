@@ -19,4 +19,4 @@ jobs:
       run: npm install -g swagger-cli
 
     - name: Validate OpenAPI schema
-      run: swagger-cli validate path/to/your/openapi.yaml
+      run: swagger-cli validate openapi.yaml
