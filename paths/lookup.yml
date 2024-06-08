@@ -1,0 +1,25 @@
+get:
+  summary: Look up translations
+  description: Get all available translations of a word or phrase.
+  parameters:
+    - name: lang
+      in: query
+      required: true
+      schema:
+        type: string
+        example: en-ru
+      description: The language pair.
+    - name: text
+      in: query
+      required: true
+      schema:
+        type: string
+        example: time
+      description: The text to translate.
+  responses:
+    '200':
+      description: Translated word or phrase with usage examples and meaning explanation.
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/translation.yml'
