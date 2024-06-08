@@ -2,38 +2,51 @@ type: object
 properties:
   head:
     type: object
+    description: Result header; not in use.
   def:
     type: array
+    description: Array of dictionary entries.
     items:
       type: object
       properties:
         text:
+          description: Dictionary entry text.
           type: string
         pos:
+          description: Part of speech.
           type: string
         ts:
           type: string
+          description: Transcription of the word or phrase.
         tr:
           type: array
+          description: Translations.
           items:
             type: object
             properties:
               text:
+                description: Translation.
                 type: string
               pos:
+                description: Part of speech.
                 type: string
               gen:
+                description: Gender of a noun, if relevant.
                 type: string
               syn:
                 type: array
+                description: Array of synonyms.
                 items:
                   type: object
                   properties:
                     text:
+                      description: The synonym.
                       type: string
                     pos:
+                      description: Part of speech.
                       type: string
                     gen:
+                      description: Gender of a noun, if relevant.
                       type: string
               mean:
                 type: array
@@ -41,18 +54,23 @@ properties:
                   type: object
                   properties:
                     text:
+                      description: Meaning of the word.
                       type: string
               ex:
                 type: array
+                description: Usage examples.
                 items:
                   type: object
                   properties:
                     text:
+                      description: Usage example.
                       type: string
                     tr:
                       type: array
+                      description: Translations to the usage example.
                       items:
                         type: object
                         properties:
                           text:
+                            description: Translation to the usage example.
                             type: string

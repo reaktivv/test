@@ -1,6 +1,10 @@
 get:
   summary: Look up translations
-  description: Get all available translations of a word or phrase.
+  description: |
+    Get the **dictionary entries** for a word or phrase.
+
+    In addition to the translation, a dictionary entry may include definitions, transcriptions, 
+    part of speech info, etc.
   parameters:
     - name: lang
       in: query
@@ -18,7 +22,7 @@ get:
       description: The text to translate.
   responses:
     '200':
-      description: Translated word or phrase with usage examples and meaning explanation.
+      description: Found dictionary entries.
       content:
         application/json:
           schema:
