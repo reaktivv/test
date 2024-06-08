@@ -41,8 +41,11 @@ components:
     translation:
       $ref: './schemas/translation.yml'
   securitySchemes:
-    key:
+    ApiKeyAuth:
       type: apiKey
       description: API key to authorize requests.
       name: key
       in: query
+
+security:
+  - ApiKeyAuth: []
