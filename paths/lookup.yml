@@ -45,9 +45,9 @@ get:
 
         Possible values are:
 
-        * `FAMILY` = 0x0001 : apply family search filter
-        * `SHORT_POS` = 0x0002 : display parts of speech in a short form
-        * `MORPHO` = 0x0004 : search by word form; this flag should also be specified if translations are needed
+        * `FAMILY` = 0x0001 : apply family search filter.
+        * `SHORT_POS` = 0x0002 : display parts of speech in a short form.
+        * `MORPHO` = 0x0004 : search by word form; this flag should also be specified if translations are needed.
         * `POS_FILTER` = 0x0008 : filter the parts of speech of the searched word and translation to match.
   responses:
     '200':
