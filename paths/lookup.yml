@@ -3,7 +3,7 @@ get:
   description: |
     Get the **dictionary entries** for a word or phrase.
 
-    In addition to the translation, a dictionary entry may include definitions, transcriptions, 
+    A dictionary entry may include definitions, transcriptions, translations,
     part of speech info, etc.
   parameters:
     - name: lang
@@ -20,6 +20,35 @@ get:
         type: string
         example: time
       description: The text to translate.
+    - name: ui
+      in: query
+      required: false
+      schema:
+        type: string
+        example: en
+      description: |
+        User's UI language to display the names of parts of speech in the dictionary entry.
+
+        Possible values are:
+          
+        * `en`: English
+        * `ru`: Russian
+        * `uk`: Ukrainian
+        * `tr`: Turkish
+    - name: flags
+      in: query
+      required: false
+      schema:
+        type: integer
+      description: |
+        Bit mask for additional parameters.
+
+        Possible values are:
+
+        * `FAMILY` = 0x0001 : apply family search filter
+        * `SHORT_POS` = 0x0002 : display parts of speech in a short form
+        * `MORPHO` = 0x0004 : search by word form; this flag should also be specified if translations are needed
+        * `POS_FILTER` = 0x0008 : filter the parts of speech of the searched word and translation to match.
   responses:
     '200':
       description: Found dictionary entries.
@@ -27,3 +56,13 @@ get:
         application/json:
           schema:
             $ref: '../schemas/translation.yml'
+    '401':
+      description: Invalid API key.
+    '402':
+      description: API key blocked.
+    '403':
+      description: The daily limit on the number of requests has been exceeded.
+    '413':
+      description: Maximum text size exceeded.
+    '501':
+      description: The translation direction is not supported.

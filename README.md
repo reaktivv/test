@@ -1,11 +1,14 @@
 # Demo Swagger page
 
-This is a demo implementation of an OpenAPI specification for Yandex Dictionary `/lookup` method.
+This repository showcases an OpenAPI specification for the Yandex Dictionary `/lookup` method.
 
-`openapi.yaml` is the specification, and `/docs` is the Swagger page adjusted to display the specification.
+* **Specification**: See `openapi.yaml`.
+* **Swagger UI**: See `index.html` at `/docs` to view the specification.
 
-Please refer to GitHub Pages at [https://reaktivv.github.io/test](https://reaktivv.github.io/test) to see the resulting Swagger page.
+Explore the live demo on GitHub Pages: [OpenAPI test](https://reaktivv.github.io/test).
 
-A legally required reference:
+Note: Some parameters in responses might differ from the schema, indicating the need for further refinement of the OpenAPI schema and the source description.
+
+## Legal Reference
 
 Реализовано с помощью сервиса [«API «Яндекс.Словарь»](http://api.yandex.ru/dictionary).
